@@ -9,6 +9,7 @@
         #navbar {
            height: 140.2px;
            width:100%;
+           flex-wrap:wrap ;
            /* border:1px solid red; */
         }
         .head1{
@@ -48,6 +49,11 @@
         }
         select{
             border:0px;
+            font-size: 13px;
+         font-family:  Arial, Helvetica, sans-serif;
+         color: #666666;
+         text-align: center;
+         margin-top: -10px  ;
         }
         .innerhead2{
            height: 64px;
@@ -81,7 +87,7 @@
         font-size: 25px ;
         }
         .input{
-            width: 70%;
+            width: 68%;
             font-size: 26px;
             /* border: 1px solid burlywood; */
             font-family:  Arial, Helvetica, sans-serif;
@@ -117,16 +123,52 @@
              /* border: 2px solid orange; */
              
          }
+         .logosize{
+             height:20px;
+             width :20px;
+         }
+         .logosize3{
+            height:12px;
+             width :20px;
+             
+         }
+         .logosize2{
+             height:35px;
+             width :35px;
+             padding-top: 0px;
+             margin-left: 00px;
+         }
+         .inputlogo{
+             height: 64px;
+             width:60px;
+             background-color: #FFDA00;
+             margin-top: -54px;
+             margin-left:390px;
+             border-top-right-radius:20px ;
+             border-bottom-right-radius:20px ;
+         }
+         .questionlogo{
+             height: 30px;
+             width:60px;
+             margin: auto;
+             border-top-right-radius:10px ;
+             border-bottom-right-radius:10px ;
+             
+             margin-top: 15px;
+             background-color: yellow;
+            
+         }
          
     </style>
 </head>
-<body>
+<body : >
     <div id ="navbar" >
         <div class ="head1">
             <div class="innerhead1">
                 <div> 
+                    <img  class = "logosize"  src="https://previews.123rf.com/images/sulikns/sulikns1705/sulikns170500059/79258964-smartphone-icon.jpg"/>
                     <select>
-                        <option value="page"> Save #$ with app</option>
+                        <option value="page">  Save #$ with app</option>
                         <option value="page"></option>
                         <option value="page"></option>
                     </select>
@@ -134,6 +176,7 @@
                 </div>
                 <div> Support Center</div>
                 <div>
+                    <img  class = "logosize3"  src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/220px-Flag_of_the_United_States.svg.png"/>
                     <select>
                         <option value="page"> Ship To /USD</option>
                         <option value="page"></option>
@@ -166,10 +209,22 @@
                         <option value="page"></option>
                         <option value="page"></option></select>
                     <input  class ="input" value="text">
+                       <div class="inputlogo"> 
+                        <div >
+                            <img class="questionlogo"   src="https://media.istockphoto.com/photos/close-up-magnifier-glass-on-yellow-background-for-design-on-web-page-picture-id1133860020?k=6&m=1133860020&s=170667a&w=0&h=qjum5NN7J13EGFuxoHQ5DI1lt-YZv7p7257firsnY6A="/>
+                        </div>
+                    </div>
                 </div>
-                <div class="innerheadinput1">Sign In </div>
-                <div class="innerheadinput1"> favorite</div>
-                <div class="innerheadinput1">cart</div>
+                <div class="innerheadinput1">
+                    <img class = "logosize2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0gRLrIVaLRl0lfG7ilb0T3IQBDuB6cw-kbw&usqp=CAU" alt="">
+                    
+                    Sign In </div>
+                <div class="innerheadinput1"> 
+                    <img class = "logosize2" src="https://th.bing.com/th/id/OIP._50WiTycrG0srpM2owdDPAHaHa?w=202&h=202&c=7&r=0&o=5&pid=1.7" alt="">
+                    favorite</div>
+                <div class="innerheadinput1">
+                    <img class = "logosize2" src="https://th.bing.com/th/id/OIP.8Zlc0JQP09pe9vJnvDL-nQHaHu?pid=ImgDet&rs=1" alt="">
+                    cart</div>
 
             </div>
 
