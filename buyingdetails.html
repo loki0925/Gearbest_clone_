@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add address</title>
+    <style>
+        .gearlogo{
+            height:70px;
+            width: 240px;
+             margin-left: 50px;
+        }
+        .addresstitle
+        { 
+            
+        margin-top: 30px;
+        margin-left: 100px;
+        font-size: 16px;
+        line-height: 34px;
+        font-weight: 700;
+        color: #000;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        .adddetails{
+            height: 750px;
+            width: 1000px;
+            margin: auto;
+            /* border: 1px solid red; */
+        }
+        .name{
+            height: 50px;
+            width: 1000px;
+            margin:auto;
+            /* border: 1px solid red; */
+            margin-top: 10px;
+            display: flex;
+        }
+        .name1{
+            width: 240px;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin:10px;
+            text-align: right;
+            font-size: 14px;
+            font-family: OpenSans,Arial,Helvetica,sans-serif;
+            
+
+        }
+        .name2{
+            width: 500px;
+            height: 40px;
+            /* border: 1px solid red; */
+            margin: 10px;
+            
+        }
+        .buyinput{
+            width:400px;
+            margin-top: -10px;
+            height: 35px;
+            /* border: 1px solid gray; */
+            /* outline: 1px solid #ffda00;   */
+            
+            
+        }
+        input:focus{    
+
+            outline:2px solid #ffda00;
+            border:none;
+        }
+        .confirm{
+            width: 100px;
+            height: 40px;
+            border: 0px;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+            color:#000;
+            background-color: #ffda00;
+            
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="gearlogo">
+      <img  class="gearlogo" src="https://uidesign.gbtcdn.com/GB/images/promotion/2019/a_evan/Gearbest/logo_gearbest.png?imbypass=true">
+    </div>  
+    <div class ="addresstitle"> <h2>Add New Address </h2></div>
+    <div class="adddetails" id="form">
+        <form>
+        <div class="name">
+            <div class="name1">First name :</div>
+            <div class="name2"><input class="buyinput"  id="fname" required/></div>
+        </div>
+        <div class="name">
+            <div class="name1">Last name :</div>
+            <div class="name2"><input class="buyinput"  id="lname" required /></div>
+        </div>
+        <div class="name">
+            <div class="name1"> Address line 1:</div>
+            <div class="name2"><input class="buyinput" id="addline1" required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> address line 2:</div>
+            <div class="name2"><input class="buyinput" id="addline2"/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> Country/ Region :</div>
+            <div class="name2"><input class="buyinput" id="country" required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> State/Province</div>
+            <div class="name2"><input class="buyinput"  id="state" required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> City :</div>
+            <div class="name2"><input class="buyinput"  id="city"required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> ZIP/Postal code</div>
+            <div class="name2"><input class="buyinput"  id="zip" required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"> Phone number</div>
+            <div class="name2"><input class="buyinput" id="phone" required/> </div>
+        </div>
+        <div class="name">
+            <div class="name1">E-mail Address :</div>
+            <div class="name2"><input class="buyinput"  type ="email" id="email"required/></div>
+        </div>
+        <div class="name">
+            <div class="name1"></div>
+            <div class="name2"> <input type="checkbox"/>set as my default address</div>
+        </div>
+        <div class="name">
+            <div class="name1"></div>
+            <div class="name2"><input class="confirm" type="submit" value="Confirm"></div>
+        </div>  
+        </form>
+       
+
+      
+    </div>
+</body>
+</html>
+<script src="buyingdetails.js">
+
+</script>
