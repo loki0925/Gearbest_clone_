@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+     #parent{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            width: 80%;
+            margin: auto;
+            
+            gap: 5px;    
+            
+        }
+        #parent > div:hover {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-top: 50px;
+        }
+        #parent>div{
+            width: 220px;
+             height: 380px;
+            /* border: 1px solid green; */
+            padding: 10px;
+             /* overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2; */
+        }
+        #photo{
+            width: 210px;
+            height: 210px;
+        }
+        #p1:hover{
+             color: orange;
+        }
+        #red{
+            color: #F30240;
+            font-size: 20px;
+            margin-top: -10px;
+
+          
+        }
+        #red1{
+             margin-top: -5px;
+             color: #F30240;
+             background-color:  #f8e0e6;
+             width: 80px;
+        }
+        *{
+            font-family: OpenSans,Arial,Helvetica,sans-serif;
+        }
+         #grey{
+                color:grey;
+}
+*{
+        font-family: sans-serif;
+    }
+    #big{
+        height: 150px;
+        width:90%;
+        border: 3px solid yellow;
+        margin:auto;
+        margin-top: 100px;
+        margin-bottom: 20px;
+    }
+    #first{
+        display: flex;
+        height: 50px;
+        margin-top: 20px;
+       padding-left: 30px;
+        gap:80px;
+    }
+      #second>p:hover{
+          color: black;
+          font-weight: bolder;
+      }
+      #first>p:hover{
+          color: black;
+          font-weight: bolder;
+      }
+       
+    #second{
+        height: 50px;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        display: flex;
+        gap:100px;
+    }
+    #sort{
+        height: 40px;
+        width: 600px;
+      
+        margin-left: 900px;
+        display: flex;
+        gap:30px;
+        font-size: 20px;
+        padding-left:30px ;
+    }
+    #sort>div{
+        height:35px;
+        width:100px;
+        
+        margin-top: 15px;
+    }
+    #sort>h4{
+        text-align: center;
+    }
+    #sort>p:hover{
+        background-color: yellow;
+        cursor: pointer;
+        color: red;
+      font-weight: bolder;
+    }
+#sortprice{
+    font-size: 20px;
+    
+}
+        
+    </style>
+</head>
+<body>
+    
+    <div id="big">
+        <div id="first"> 
+            <h4>ALL</h4>
+                <P> Computers, Tablets & Office</P>
+                <P> Home Improvement & Tools</P>
+                <p> Drones, Toys & Hobbies</p>
+                <p>Consumer Electronics</p>
+        </div>
+        <div id="second">
+            <P> Outdoors, Fitness & Sports</P>
+            <P>  Health & Personal Care</P>
+            <p> Motor & Car Electronics</p>
+            <p> Industrial & Scientific</p>
+            <p>Cell Phones & Accessories</p>
+        </div>
+    </div>
+    <div id="sort">
+        <h4>Sort By :</h4>
+            <p>Hottest</p>
+        <p>Newest</p>
+        <p>Discount</p>
+        <select name="" id="sortprice" onchange="sortprice()">
+            <option value="">price</option>
+            <option value="high">High to Low</option>
+            <option value="low">Low to High</option>
+        </select>
+        </div>
+      
+        
+    <div id="parent">
+
+    </div>
+</body>
+</html>
+<script>
+    var data = [
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/5f26bc001550.jpg",
+            name : "Original Xiaomi Redmi Buds 3 Lite Youth Edition Earphone...",
+            price1 :24.66,
+            price2 : "$24.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16416/goods_thumb_220-v1/9dbf47dbe530.jpg",
+            name : "A9 Mini Camera WiFi Camera 1080P HD Night Version Voice...",
+            price1 :16.80,
+            price2 : "$16.90",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16421/goods_thumb_220-v3/9077ff9db427.jpg",
+            name : "Xiaomi Mijia Mini Inflatable Treasure 1S Portable Smart...",
+            price1 :45.66,
+            price2 : "$45.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16420/goods_thumb_220-v1/004ea00b29bc.jpg",
+            name : "Xiaomi Mijia Night Light 2 Bluetooth Version Adjustable...",
+            price1 :15.66,
+            price2 : "$15.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878026654363611136/16419/goods_thumb_220-v1/316534621fbd.jpg",
+            name : "Y68 SSmart Watch Men Smartwatch For WomenMen...",
+            price1 :12.66,
+            price2 : "$13.99",
+            sale : "Flash Sale",
+        },
+
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16418/goods_thumb_220-v1/79be908408aa.jpg",
+            name : "Xiaomi Mijia Smart IP Camera PTZ 2K 360° WIFI Infrared Night...",
+            price1 :46.66,
+            price2 : "$46.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16407/goods_thumb_220-v1/40a93039dfd9.jpg",
+            name : "USLION 48W USB Charger Fast Charge QC 3.0 Wall Charging...",
+            price1 :10.80,
+            price2 : "$10.90",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16420/goods_thumb_220-v1/027b07233787.jpg",
+            name : "Xiaomi Mijia LED Corridor Night Light Infrared Remote Control...",
+            price1 :6.66,
+            price2 : "$6.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16416/goods_thumb_220-v1/5e4723996cff.jpg",
+            name : "Xiaomi Mi Water Immersing Sensor Smart Wireless Water...",
+            price1 :17.66,
+            price2 : "$17.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16417/goods_thumb_220-v1/3000b9654e71.jpg",
+            name : "Xiaomi Mijia Multifunction Smart Wireless Switch Remot...",
+            price1 :12.66,
+            price2 : "$13.99",
+            sale : "Flash Sale",
+        },
+
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/e1c76b337a79.jpg",
+            name : "Original Xiaomi Mi Band 6 / 6 NFC Smart Wristband 1.56 inch...",
+            price1 :38.66,
+            price2 : "$38.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16417/goods_thumb_220-v1/5cf06b44459b.jpg",
+            name : "Xiaomi Mi WiFi Amplifier Pro 300M Signal Extender Repeat...",
+            price1 :15.80,
+            price2 : "$15.90",
+            sale : "Flash Sale",
+        },
+        // {
+        //     image : "https://uidesign.gbtcdn.com/GB/image/4617/400x400.jpg",
+        //     name : "Xiaomi Mijia Mini Inflatable Treasure 1S Portable Smart...",
+        //     price1 :6.66,
+        //     price2 : "$6.99",
+        //     sale : "Flash Sale",
+        // },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16402/goods_thumb_220-v2/60f4cc4e3d1b.jpg",
+            name : "Tourya VJ320 Wireless Headphones Over Eer...",
+            price1 :38.66,
+            price2 : "$38.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16425/goods_thumb_220-v1/46e8cf448d7e.jpg",
+            name : "Original Xiaomi Mi Fashion Mouse Portable Wireless Game...",
+            price1 :17.66,
+            price2 : "$17.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16415/goods_thumb_220-v1/df386beb2b4c.jpg",
+            name : "DANIU Digital Stainless Steel Caliper 150mm 6 Inches...",
+            price1 :33.59,
+            price2 : "$33.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16407/goods_thumb_220-v1/37a8cb7ef0b3.jpg",
+            name : "Baseus 3 in 1 USB Cable Type C Cable for Samsung S20 Xiaom...",
+            price1 :11.80,
+            price2 : "$11.90",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6882688590640508928/16448/goods_thumb_220-v3/6f9c892c7ec6.jpg",
+            name : "5in1 CO2 Meter Digital Temperature Humidity Tester...",
+            price1 :36.66,
+            price2 : "$36.96",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16401/goods_thumb_220-v1/1a6eb3ffb36e.jpg",
+            name : "LAFAGIET 8025 Replacement Battery USB Electronic Lighter...",
+            price1 :31.19,
+            price2 : "$31.59",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16407/goods_thumb_220-v1/e49d42522be1.jpg",
+            name : "Netac P500 Micro SD Card 512GB 256GB 64GB 32GB 16...",
+            price1 :19.74,
+            price2 : "$19.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16390/goods_thumb_220-v2/fbb3480a0e26.jpg",
+            name : "YHKOMS 80W 14000LM Car Haedlight H4 H7 H1 LED H8 H...",
+            price1 :24.89,
+            price2 : "$25.19",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16391/goods_thumb_220-v1/0fc8747c9e18.jpg",
+            name : "Bluetooth Sleeping Headphones Sports Headband...",
+            price1 :29.49,
+            price2 : "$29.96",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16383/goods_thumb_220-v2/6cd0ff50b049.jpg",
+            name : "Lenovo LP40 TWS Wireless Earphone Bluetooth 5.0 Dual...",
+            price1 :32.56,
+            price2 : "$33.30",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16425/goods_thumb_220-v1/7f2d041dc47e.jpg",
+            name : "Original Xiaomi Mi Wireless 104 Keys Keyboard Mouse Set...",
+            price1 :30.80,
+            price2 : "$30.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16424/goods_thumb_220-v1/f64de5b53fcd.jpg",
+            name : "Xiaomi Mijia Electric Oral Irrigator Water Flosser High...",
+            price1 :42.59,
+            price2 : "$42.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6701436345185419264/16415/goods_thumb_220-v1/966fc01680e6.jpg",
+            name : "Xiaomi Cleargrass -compatible Alarm Clock smart Control...",
+            price1 :17.79,
+            price2 : "$17.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/store/6866325577285169152/16420/goods_thumb_220-v1/03f93622bf20.jpg",
+            name : "Automatic Foam Soap Dispensers Bathroom Smart...",
+            price1 :26.08,
+            price2 : "$27.46",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6882688590640508928/16426/goods_thumb_220-v2/47a4f3a2dca3.jpg",
+            name : "Automatic Foam Soap Dispensers Bathroom Smart...",
+            price1 :25.90,
+            price2 : "$26.25",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16425/goods_thumb_220-v1/b32acd84e8a2.jpg",
+            name : "Automatic Foam Soap Dispensers Bathroom Smart...",
+            price1 :14.88,
+            price2 : "$14.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16424/goods_thumb_220-v1/e1f61b41b586.jpg",
+            name : "Original Xiaomi Mi Bluetooth Voice Remote Controller for...",
+            price1 :22.66,
+            price2 : "$22.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/e71f9c81fa47.jpg",
+            name : "Original Xiaomi Mi Necklace Wireless Bluetooth Earphone...",
+            price1 :27.66,
+            price2 : "$28.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16424/goods_thumb_220-v1/e1f61b41b586.jpg",
+            name : "Original Xiaomi Mi Bluetooth Voice Remote Controller fo...",
+            price1 :22.68,
+            price2 : "$22.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/e71f9c81fa47.jpg",
+            name : "Original Xiaomi Mi Necklace Wireless Bluetooth Earphone...",
+            price1 :27.66,
+            price2 : "$28.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/e2ca840453ae.jpg",
+            name : "Original Xiaomi Redmi AirDots TWS Bluetooth Wireless...",
+            price1 :19.66,
+            price2 : "$19.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6866325577285169152/16396/goods_thumb_220-v1/af13a219125e.jpg",
+            name : "Electric Razor Electric Shaver Rechargeable Shaving Machin...",
+            price1 :23.33,
+            price2 : "$24.30",
+            sale : "",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16383/goods_thumb_220-v1/692da15d50c2.jpg",
+            name : "iMice Wireless Mouse Bluetooth RGB Rechargeable...",
+            price1 :14.93,
+            price2 : "$15.29",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16423/goods_thumb_220-v2/b9b9c9381ef0.jpg",
+            name : "H50 RK3318 Smart TV Box Android 10.0 4GB 32GB 64GB...",
+            price1 :55.80,
+            price2 : "$55.90",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16414/goods_thumb_220-v1/1bfb2a3b9567.jpg",
+            name : "Original Xiaomi Redmi AirDots 3 TWS Bluetooth 5.2 Wireless...",
+            price1 :34.66,
+            price2 : "$34.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16399/goods_thumb_220-v1/6f843b2fea6a.jpg",
+            name : "P50 PRO 5G Smartphone 16GB+1TB 8000mAh 64MP...",
+            price1 :205.39,
+            price2 : "$207.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6701436345185419264/16396/goods_thumb_220-v1/13329bab31cf.jpg",
+            name : "WiFi Smart Socket Power outlet Multi Brazil Plug With Energy...",
+            price1 :26.69,
+            price2 : "$26.99",
+            sale : "",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16395/goods_thumb_220-v1/b045d98e7eda.jpg",
+            name : "YCM AIWEAR Smart Watch Men Women Smartwatch Heart Ra...",
+            price1 :31.59,
+            price2 : "$31.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6882688590640508928/16431/goods_thumb_220-v1/46987ea8544a.jpg",
+            name : "CO2 Air Detector Carbon Dioxide Detector Agricultural...",
+            price1 :29.00,
+            price2 : "$29.90",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16428/goods_thumb_220-v1/ffab5cdf472b.jpg",
+            name : "Original Xiaomi Mi Zoom Tripod Selfie Stick with Wireless...",
+            price1 :21.88,
+            price2 : "$21.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16422/goods_thumb_220-v2/67fedd102dee.jpg",
+            name : "Replacement Toothbrush Head Accessories for SOOCARE...",
+            price1 :6.88,
+            price2 : "$6.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/store/6866325577285169152/16420/goods_thumb_220-v2/b16069c1a934.jpg",
+            name : "Diese 433Mhz wireless Wall Switch rf 86 wall panel...",
+            price1 :13.04,
+            price2 : "$13.73",
+            sale : "",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16418/goods_thumb_220-v1/5e4b305950d8.jpg",
+            name : "Xiaomi Mijia Smart Camera 2K Standard Edition 1296P WiFi...",
+            price1 :32.66,
+            price2 : "$32.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878026654363611136/16417/goods_thumb_220-v1/9e2bd69876b9.jpg",
+            name : "DT7 Plus Smart Watch Series 7 Two Buttons NFC GPS Tracker...",
+            price1 : 30.97,
+            price2 : "$31.76",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16416/goods_thumb_220-v1/5e4e844f1ba6.jpg",
+            name : "Xiaomi Mi Smart Door Window Sensor 2 Light Detection...",
+            price1 :13.88,
+            price2 : "$13.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878026654363611136/16413/goods_thumb_220-v1/c0cda98218c1.jpg",
+            name : "Xiaomi Mi Band 6 Smart Bracelet",
+            price1 :40.56,
+            price2 : "$41.60",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6701436345185419264/16408/goods_thumb_220-v1/f7629f60e661.jpg",
+            name : "Xiaomi Youpin Ultrasonic Cleaner Mini Bath Glasses...",
+            price1 :71.19,
+            price2 : "$71.99",
+            sale : "",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6701436345185419264/16407/goods_thumb_220-v1/d3b173c3dc27.jpg",
+            name : "XIAOMI Qulitell Electric Shoe Dryer Heater Dehumidify...",
+            price1 :35.95,
+            price2 : "$35.99",
+            sale : "",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16404/goods_thumb_220-v2/4930720eb6e1.jpg",
+            name : "Robot Vacuum Cleaner Hepa Filter Main Brush For Xiaomi ...",
+            price1 : 19.99,
+            price2 : "$20.24",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16401/goods_thumb_220-v1/850bc1076a25.jpg",
+            name : "JIESEMWER USB Rechargeable Wireless Mouse 2.4GHz Vertica...",
+            price1 :31.19,
+            price2 : "$31.59",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6701436345185419264/16388/goods_thumb_220-v1/596554c0584c.jpg",
+            name : "AIRMSEN Food Thermometer Kitchen Thermometer Digital...",
+            price1 :22.24,
+            price2 : "$22.49",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6771730315905003520/16387/goods_thumb_220-v1/8bd809739c5c.jpg",
+            name : "18cm Cute Plush Toys Soft Stuffed Cartoon Toy Pikachu...",
+            price1 :14.99,
+            price2 : "$15.37",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16425/goods_thumb_220-v1/587f593d2460.jpg",
+            name : "N95 KN95 Mask Dust Protection Respirator with Me...",
+            price1 :9.90,
+            price2 : "$9.95",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16423/goods_thumb_220-v1/a58bc19fa61a.jpg",
+            name : "Bluedio BT5 wireless headphone bluetooth headset...",
+            price1 :29.79,
+            price2 : "$29.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16421/goods_thumb_220-v1/23e13e0ab984.jpg",
+            name : "Original Xiaomi MI Car Charger 36W Max Quick Charge 3.0...",
+            price1 :16.88,
+            price2 : "$16.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16423/goods_thumb_220-v2/f90c9abe33fb.jpg",
+            name : "H96 MAX RK3318 Smart TV Box Android 11 4G 64GB 32G 4K...",
+            price1 :49.89,
+            price2 : "$49.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878391336429613056/16418/goods_thumb_220-v1/4fcf032fd5b6.jpg",
+            name : "Xiaomi Mijia Smart IP Camera PTZ Vision SE+ 1080P Wireless...",
+            price1 :38.66,
+            price2 : "$38.99",
+            sale : "Flash Sale",
+        },
+        {
+            image : "https://gloimg.gbtcdn.com/soa/gb/item/6878024886355423232/16416/goods_thumb_220-v1/4b1df2c99d4f.jpg",
+            name : "NEJE Master 2S Plus 32-bit Mainboard CNC Desktop Mini...",
+            price1 :296.99,
+            price2 : "$297.99",
+            sale : "Flash Sale",
+        },
+    ]
+
+    display(data)
+
+function sortprice(){
+        var selected=document.getElementById("sortprice").value
+    // decending
+    if(selected=="high"){
+    data.sort(function(a,b)
+     {return b.price1 - a.price1} )
+    }
+
+    // acending
+    if(selected=="low"){
+        data.sort(function(a,b) 
+        {return a.price1- b.price1} )
+
+    }
+    display(data)
+}
+
+function display(data) {
+    var parent = document.getElementById("parent")
+    parent.innerHTML = null
+    data.map(function(element,index,arr){
+        var div= document.createElement("div");
+        var image=document.createElement("img");
+
+        image.setAttribute("src",element.image);
+        image.setAttribute("id","photo");
+
+        var name=document.createElement("p");
+        name.setAttribute("id","p1");
+        name.innerText=element.name;
+    
+        var price1 = document.createElement("h2");
+        price1.innerText=`$ ${element.price1}`;
+        price1.setAttribute("id","red")
+    
+        var price2 = document.createElement("p");
+        price2.innerText=element.price2;
+        price2.setAttribute("id","grey")
+    
+        var sale= document.createElement("p")
+        sale.innerText=element.sale;
+        sale.setAttribute("id","red1")
+    
+        div.append(image,name,price1,price2,sale)
+        parent.append(div);
+
+        
+    });
+}
+
+
+</script>

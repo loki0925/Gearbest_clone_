@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+    }
+    #big{
+        height: 150px;
+        width:90%;
+        border: 3px solid yellow;
+        margin:auto;
+        margin-top: 100px;
+        margin-bottom: 20px;
+    }
+    #first{
+        display: flex;
+        height: 50px;
+        margin-top: 20px;
+       padding-left: 30px;
+        gap:80px;
+    }
+      #second>p:hover{
+          color: black;
+          font-weight: bolder;
+      }
+      #first>p:hover{
+          color: black;
+          font-weight: bolder;
+      }
+       
+    #second{
+        height: 50px;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        display: flex;
+        gap:100px;
+    }
+    #sort{
+        height: 70px;
+        width: 500px;
+      
+        margin-left: 900px;
+        display: flex;
+        gap:30px;
+        font-size: 20px;
+        padding-left:30px ;
+    }
+    #sort>div{
+        height:35px;
+        width:100px;
+        background-color: yellow;
+        margin-top: 15px;
+    }
+    #sort>h4{
+        text-align: center;
+    }
+    #sort>p:hover{
+        background-color: yellow;
+    }
+
+     
+</style>
+<body>
+    <div id="big">
+        <div id="first"> 
+            <h4>ALL</h4>
+                <P> Computers, Tablets & Office</P>
+                <P> Home Improvement & Tools</P>
+                <p> Drones, Toys & Hobbies</p>
+                <p>Consumer Electronics</p>
+        </div>
+        <div id="second">
+            <P> Outdoors, Fitness & Sports</P>
+            <P>  Health & Personal Care</P>
+            <p> Motor & Car Electronics</p>
+            <p> Industrial & Scientific</p>
+            <p>Cell Phones & Accessories</p>
+        </div>
+    </div>
+    <div id="sort">
+        <h4>Sort By :</h4>
+            <p>Hottest</p>
+        <p>Newest</p>
+        <p>Discount</p>
+        <p>Price</p>
+    </div>
+</body>
+</html>
