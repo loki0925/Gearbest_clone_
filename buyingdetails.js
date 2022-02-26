@@ -1,3 +1,4 @@
+
 document.querySelector("#form").addEventListener("submit",formSubmit);
 var dataArr = JSON.parse(localStorage.getItem("shipDetails")) || [];
 function formSubmit(event)
@@ -31,4 +32,4 @@ function formSubmit(event)
      console.log(dataObj);
      dataArr.push(dataObj );
       localStorage.setItem("shipDetails",JSON.stringify(dataArr));
-}   
+
