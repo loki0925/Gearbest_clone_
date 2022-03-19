@@ -32,4 +32,5 @@ function formSubmit(event)
      console.log(dataObj);
      dataArr.push(dataObj );
       localStorage.setItem("shipDetails",JSON.stringify(dataArr));
-
+    }
+ 
