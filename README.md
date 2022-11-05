@@ -1,2 +1,2 @@
 # Gearbest_clone_
-CW project
+![IMAGE](C:\Users\Preet\Deskstop\SsGearBest.png)
