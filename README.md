@@ -1,2 +1,2 @@
 # Gearbest_clone_
-![IMAGE](C:\Users\Preet\Deskstop\SsGearBest.png)
+![image](files://C:/Users/Preet/Desktop/SsGearBest.png)
